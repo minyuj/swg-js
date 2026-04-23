@@ -99,7 +99,6 @@ export class OffersFlow {
       'list': options?.list || 'default',
       'skus': options?.skus || null,
       'isClosable': this.isClosable_,
-      'isFromButton': options?.isFromButton ?? false,
     });
 
     if (options?.configurationId !== undefined) {
@@ -157,8 +156,6 @@ export class OffersFlow {
       ArticleExperimentFlags.MULTI_INSTANCE_MONETARY_CTA_EXPERIMENT
     );
 
-    const {isFromButton, configurationId, ...messageArgs} = args;
-
     return new ActivityIframeView(
       this.win_,
       this.activityPorts_,
@@ -167,14 +164,13 @@ export class OffersFlow {
         this.clientConfigManager_,
         this.deps_.pageConfig(),
         this.win_.location.hash,
-        configurationId,
+        args.configurationId,
         /* isInlineCta */ false,
         /* origin */ multiInstanceMonetaryCtaExperiment
           ? parseUrl(this.win_.location.href).origin
-          : undefined,
-        isFromButton
+          : undefined
       ),
-      messageArgs as {[key: string]: string},
+      args as {[key: string]: string},
       this.clientConfigManager_.getLanguage(),
       /* shouldFadeBody */ true,
       /* hasLoadingIndicator_ */ false,

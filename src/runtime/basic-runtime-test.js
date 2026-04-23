@@ -732,7 +732,6 @@ describes.realWin('BasicRuntime', (env) => {
         .expects('showOffers')
         .withExactArgs({
           isClosable: true,
-          isFromButton: true,
         })
         .once();
       await subscriptionButton.click();
@@ -741,7 +740,6 @@ describes.realWin('BasicRuntime', (env) => {
         .expects('showContributionOptions')
         .withExactArgs({
           isClosable: true,
-          isFromButton: true,
         })
         .once();
       await contributionButton.click();
@@ -804,7 +802,6 @@ describes.realWin('BasicRuntime', (env) => {
         .expects('showOffers')
         .withExactArgs({
           isClosable: true,
-          isFromButton: true,
         })
         .once();
       await subscriptionButton.click();
@@ -813,7 +810,6 @@ describes.realWin('BasicRuntime', (env) => {
         .expects('showContributionOptions')
         .withExactArgs({
           isClosable: true,
-          isFromButton: true,
         })
         .once();
       await contributionButton.click();

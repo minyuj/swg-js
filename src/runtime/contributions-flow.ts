@@ -94,8 +94,7 @@ export class ContributionsFlow {
         /* isInlineCta */ false,
         /* origin */ multiInstanceMonetaryCtaExperiment
           ? parseUrl(this.win_.location.href).origin
-          : undefined,
-        this.options_?.isFromButton
+          : undefined
       ),
       feArgs({
         'productId': this.deps_.pageConfig().getProductId(),
